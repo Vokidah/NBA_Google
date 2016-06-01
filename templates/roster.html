@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-left:35%;">
+    <h1>{{team}}</h1>
+    <div class="col-md-6">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for each in roster %}
+              <tr>
+                  {% if searched_player and searched_player == each %}
+                    {% for i in each %}
+                        <td><h3><b>{{i}}</b></h3></td>
+                    {% endfor %}
+                  {% else %}
+                      {% for i in each %}
+                        <td>{{i}}</td>
+                      {% endfor %}
+                  {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+  </div>
+{% endblock %}

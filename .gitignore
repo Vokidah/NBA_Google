@@ -1,0 +1,6 @@
+*.pyc
+*.py~
+venv/
+.idea/
+lib/
+*~
